@@ -1,0 +1,18 @@
+class Drops{
+    constructor(x, y){
+        var options = {
+            'friction':0.1,
+            'density':0.01
+        };
+        this.body = Bodies.circle(x, y, 10, options);
+        World.add(world, this.body);
+    };
+    display() {
+        var angle = this.body.angle;
+        push();
+        translate(this.body.position.x, this.body.position.y);
+        rotate(angle);
+        ellipseMode(CENTER);
+        ellipse(0, 0, 20, 20);
+    }
+};
